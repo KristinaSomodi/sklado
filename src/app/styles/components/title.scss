@@ -1,0 +1,14 @@
+/*
+    components: title.scss
+*/
+.title {
+  &--primary {
+    font-family: "Montserrat", sans-serif;
+    font-size: 54px;
+  }
+
+  &--secondary {
+    font-family: "Nunito", sans-serif;
+    font-size: 24px;
+  }
+}
