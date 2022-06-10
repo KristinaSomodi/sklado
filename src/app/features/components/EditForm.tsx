@@ -1,4 +1,4 @@
-function AddForm() {
+function EditForm() {
   return (
     <>
       <form className="addProduct ml-40 mt-32">
@@ -43,12 +43,13 @@ function AddForm() {
             />
           </label>
         </div>
-        <button className="btn btn--secondary btn--xl mt-80">
-          ADD PRODUCT
+        <button className="btn btn--secondary btn--xl mt-80">SAVE</button>
+        <button className="btn btn--delete btn--xl mt-16">
+          DELETE PRODUCT
         </button>
       </form>
     </>
   );
 }
 
-export default AddForm;
+export default EditForm;

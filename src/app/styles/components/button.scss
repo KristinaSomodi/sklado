@@ -34,6 +34,15 @@
     cursor: pointer;
   }
 
+  &--delete {
+    border: 1px solid $red;
+    border-radius: 2px;
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: $red;
+  }
+
   //size
   &--m {
     font-size: 14px;
@@ -48,7 +57,9 @@
   }
 
   &--xl {
-    padding: 12px 198px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px;
     width: 100%;
   }
 }
