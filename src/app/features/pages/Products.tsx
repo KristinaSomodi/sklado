@@ -11,9 +11,13 @@ function Products() {
             Start adding products!
           </div>
           <div className="wrap">
-            <div className="field mr-16">
+            <div className="field__search mr-16">
               <i className="icon icon--base icon--search icon--black ml-16"></i>
-              <input type="text" placeholder="Search" className="input ml-8 " />
+              <input
+                type="text"
+                placeholder="Search"
+                className="input input--search ml-8 "
+              />
             </div>
             <button className="btn btn--tertiary btn--l  mr-24">
               ADD PRODUCT{" "}
