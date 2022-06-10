@@ -11,6 +11,23 @@
   mask-position: 50%;
   transition: background-color 300ms ease-in-out;
 
+  //icon color
+  &--blue {
+    background-color: $blue;
+  }
+
+  &--black {
+    background-color: $black;
+  }
+
+  &--gray {
+    background-color: $gray-b;
+  }
+
+  &--grayd {
+    background-color: #cecece;
+  }
+
   //icon sizes
   &--ty {
     width: calc(#{$unit} * 3);
@@ -43,11 +60,27 @@
     mask-image: url("../../../assets/icons/arrow.svg");
   }
 
-  // &--delete {
-  //   mask-image: url("../../../assets/icons/delete.svg");
-  // }
+  &--package {
+    mask-image: url("../../../assets/icons/package.svg");
+  }
 
-  // &--edit {
-  //   mask-image: url("../../../assets/icons/edit.svg");
-  // }
+  &--search {
+    mask-image: url("../../../assets/icons/search.svg");
+  }
+
+  &--plus {
+    mask-image: url("../../../assets/icons/plus.svg");
+  }
+
+  &--sort {
+    mask-image: url("../../../assets/icons/sort.svg");
+  }
+
+  &--edit {
+    mask-image: url("../../../assets/icons/edit.svg");
+  }
+
+  &--delete {
+    mask-image: url("../../../assets/icons/trash.svg");
+  }
 }

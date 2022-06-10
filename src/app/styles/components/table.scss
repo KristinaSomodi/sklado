@@ -1,0 +1,36 @@
+/*
+    components: table.scss
+*/
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__header {
+    color: $blue;
+    text-align: left;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  & td {
+    padding: 12px;
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    &:nth-child(odd) {
+      font-weight: 300;
+    }
+  }
+
+  & tr:nth-child(even) {
+    background-color: #e5e5e5;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: right;
+  }
+}

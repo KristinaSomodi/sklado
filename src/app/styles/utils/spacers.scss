@@ -7,8 +7,32 @@
     &-80 {
       margin-left: 80px;
     }
+    &-40 {
+      margin-left: 40px;
+    }
     &-29 {
       margin-left: 29px;
+    }
+    &-24 {
+      margin-left: 24px;
+    }
+    &-16 {
+      margin-left: 16px;
+    }
+    &-8 {
+      margin-left: 8px;
+    }
+  }
+
+  &r {
+    &-24 {
+      margin-right: 24px;
+    }
+    &-19 {
+      margin-right: 19px;
+    }
+    &-16 {
+      margin-right: 16px;
     }
   }
 
@@ -21,6 +45,18 @@
     }
     &-32 {
       margin-top: 32px;
+    }
+    &-12 {
+      margin-top: 12px;
+    }
+  }
+
+  &b {
+    &-80 {
+      margin-bottom: 80px;
+    }
+    &-42 {
+      margin-bottom: 42px;
     }
   }
 }

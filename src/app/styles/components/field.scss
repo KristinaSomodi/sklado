@@ -1,0 +1,11 @@
+/*
+    components: fiels.scss
+*/
+
+.field {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 48px;
+  border: 1px solid $black;
+}

@@ -5,10 +5,18 @@
   &--primary {
     font-family: "Montserrat", sans-serif;
     font-size: 54px;
+    font-weight: 600;
   }
 
   &--secondary {
     font-family: "Nunito", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  &--tertiary {
+    font-family: "Nunito", sans-serif;
     font-size: 24px;
+    font-weight: 400;
   }
 }
