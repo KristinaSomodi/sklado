@@ -1,4 +1,25 @@
+import { useEffect, useState } from "react";
+import ProductsService from "../../services/productsService";
+import { Product } from "../../types/Product";
+
 function ProductsTable() {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  const productsService = new ProductsService();
+
+  const fetchProducts = async () => {
+    try {
+      const res = await productsService.getProducts();
+      setProducts(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   return (
     <table className="table mt-32">
       <thead>
