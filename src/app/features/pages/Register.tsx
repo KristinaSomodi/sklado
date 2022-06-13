@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 function Register() {
   return (
     <>
@@ -62,7 +64,7 @@ function Register() {
               <div className="pos--rel">
                 <input
                   type="password"
-                  placeholder=""
+                  placeholder="********"
                   className="input input--log mt-8"
                   required
                 />
@@ -76,23 +78,26 @@ function Register() {
               <div className="pos--rel">
                 <input
                   type="password"
-                  placeholder=""
+                  placeholder="********"
                   className="input input--log mt-8"
                   required
                 />
                 <i className="icon icon--base icon--eye-on icon--black input__icon"></i>
               </div>
             </div>
-
-            <button className="btn btn--secondary btn--xl mt-80">
-              Register
-            </button>
+            <NavLink to={"/login"}>
+              <button className="btn btn--secondary btn--xl mt-80">
+                Register
+              </button>
+            </NavLink>
           </form>
           <div className="type type--montserrat ml-80 mt-24">
             Already have an account?
-            <span className="type type--montserrat type-500 type-16 type--blue">
-              Login here.
-            </span>
+            <NavLink to={"/login"}>
+              <span className="type type--montserrat type-500 type-16 type--blue">
+                Login here.
+              </span>
+            </NavLink>
           </div>
         </div>
       </div>

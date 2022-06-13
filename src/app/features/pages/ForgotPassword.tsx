@@ -1,12 +1,11 @@
+import { NavLink } from "react-router-dom";
+import background from "../../../assets/images/background.png";
+
 function ForgotPassword() {
   return (
     <>
       <div className="l">
-        <img
-          src={require("../../../assets/images/background.png")}
-          alt=""
-          className="l--left"
-        />
+        <img src={background} alt="" className="l--left" />
 
         <div className="l--right">
           {/* title */}
@@ -35,14 +34,17 @@ function ForgotPassword() {
                 required
               />
             </div>
-
-            <button className="btn btn--secondary btn--xl mt-80">
-              Reset password
-            </button>
+            <NavLink to={"/login"}>
+              <button className="btn btn--secondary btn--xl mt-80">
+                Reset password
+              </button>
+            </NavLink>
           </form>
-          <div className="type type--montserrat type--blue ml-80 mt-24">
-            Back to login.
-          </div>
+          <NavLink to={"/login"}>
+            <div className="type type--montserrat type--blue ml-80 mt-24">
+              Back to login.
+            </div>
+          </NavLink>
         </div>
       </div>
     </>

@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 function Login() {
   return (
     <>
@@ -42,23 +44,31 @@ function Login() {
               <div className="pos--rel">
                 <input
                   type="password"
-                  placeholder=""
+                  placeholder="********"
                   className="input input--log mt-8"
                   required
                 />
                 <i className="icon icon--base icon--eye-on icon--black input__icon"></i>
               </div>
             </div>
-            <div className="type type--montserrat type-500 type-16 type--blue flex--right mt-8">
-              Forgot password?
-            </div>
-            <button className="btn btn--secondary btn--xl mt-80">Login</button>
+            <NavLink to={"/forgot-password"}>
+              <div className="type type--montserrat type-500 type-16 type--blue flex--right mt-8">
+                Forgot password?
+              </div>
+            </NavLink>
+            <NavLink to={"/products"}>
+              <button className="btn btn--secondary btn--xl mt-80">
+                Login
+              </button>
+            </NavLink>
           </form>
           <div className="type type--montserrat ml-80 mt-24">
             Don't have an account yet?
-            <span className="type type--montserrat type-500 type-16 type--blue">
-              Register here.
-            </span>
+            <NavLink to={"/register"}>
+              <span className="type type--montserrat type-500 type-16 type--blue">
+                Register here.
+              </span>
+            </NavLink>
           </div>
         </div>
       </div>

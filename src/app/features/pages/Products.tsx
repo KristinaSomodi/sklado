@@ -1,7 +1,30 @@
+import { Product } from "../../types/Product";
 import ProductsTable from "../components/ProductsTable";
 import Sidebar from "../components/Sidebar";
+import { useEffect, useState } from "react";
+import ProductsService from "../../services/productsService";
+import { NavLink } from "react-router-dom";
 
 function Products() {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  const productsService = new ProductsService();
+
+  const fetchProducts = async () => {
+    try {
+      const res = await productsService.getProducts();
+      setProducts(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  console.log(products);
+
   return (
     <>
       <div className="layout">
@@ -19,12 +42,14 @@ function Products() {
                 className="input input--search ml-8 "
               />
             </div>
-            <button className="btn btn--tertiary btn--l  mr-24">
-              ADD PRODUCT{" "}
-              <i className="icon icon--base icon--plus icon--blue ml-40"></i>
-            </button>
+            <NavLink to={"/add-product"}>
+              <button className="btn btn--tertiary btn--l  mr-24">
+                ADD PRODUCT{" "}
+                <i className="icon icon--base icon--plus icon--blue ml-40"></i>
+              </button>
+            </NavLink>
           </div>
-          <ProductsTable></ProductsTable>
+          <ProductsTable products={products}></ProductsTable>
         </div>
       </div>
     </>

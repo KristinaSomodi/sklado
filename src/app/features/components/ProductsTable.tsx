@@ -1,25 +1,11 @@
-import { useEffect, useState } from "react";
-import ProductsService from "../../services/productsService";
 import { Product } from "../../types/Product";
 
-function ProductsTable() {
-  const [products, setProducts] = useState<Product[]>([]);
+interface Props {
+  products: Product[];
+}
 
-  const productsService = new ProductsService();
-
-  const fetchProducts = async () => {
-    try {
-      const res = await productsService.getProducts();
-      setProducts(res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
+const ProductsTable: React.FC<Props> = (props) => {
+  const { products } = props;
   return (
     <table className="table mt-32">
       <thead>
@@ -35,46 +21,24 @@ function ProductsTable() {
           </th>
         </tr>
       </thead>
+
       <tbody>
-        <tr>
-          <td>1234567</td>
-          <td>product1</td>
-          <td>33</td>
-          <td className="icons">
-            <i className="icon icon--base icon--edit icon--black "></i>
-            <i className="icon icon--base icon--delete icon--black ml-29 "></i>
-          </td>
-        </tr>
-        <tr>
-          <td>1234567</td>
-          <td>product1</td>
-          <td>33</td>
-          <td className="icons">
-            <i className="icon icon--base icon--edit icon--black "></i>
-            <i className="icon icon--base icon--delete icon--black ml-29 "></i>
-          </td>
-        </tr>
-        <tr>
-          <td>1234567</td>
-          <td>product1</td>
-          <td>33</td>
-          <td className="icons">
-            <i className="icon icon--base icon--edit icon--black "></i>
-            <i className="icon icon--base icon--delete icon--black ml-29 "></i>
-          </td>
-        </tr>
-        <tr>
-          <td>1234567</td>
-          <td>product1</td>
-          <td>33</td>
-          <td className="icons">
-            <i className="icon icon--base icon--edit icon--black "></i>
-            <i className="icon icon--base icon--delete icon--black ml-29 "></i>
-          </td>
-        </tr>
+        {products.map((product) => {
+          return (
+            <tr>
+              <td>{product.barcode}</td>
+              <td>{product.name}</td>
+              <td>{product.quantity}</td>
+              <td className="icons">
+                <i className="icon icon--base icon--edit icon--black "></i>
+                <i className="icon icon--base icon--delete icon--black ml-29 "></i>
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
-}
+};
 
 export default ProductsTable;

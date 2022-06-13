@@ -1,8 +1,10 @@
+import { Link, NavLink } from "react-router-dom";
+
 function Landing() {
   return (
     <>
       <div className="page">
-        <div className="wrap ml-80  ">
+        <div className="page--wrap ml-80  ">
           <img
             className="logo mt-80"
             src={require("../../../assets/images/logo-big.png")}
@@ -10,9 +12,11 @@ function Landing() {
           />
           <div className="title--primary mt-80">Welcome to Sklado!</div>
           <div className="title--tertiary mt-24">Jump right in!</div>
-          <button className="btn--primary btn--l mt-32">
-            VIEW PRODUCTS <i className="icon icon--base icon--arrow ml-29"></i>
-          </button>
+          <NavLink to={"/login"}>
+            <button className="btn--primary btn--l mt-32">
+              LOGIN <i className="icon icon--base icon--arrow ml-29"></i>
+            </button>
+          </NavLink>
         </div>
       </div>
     </>
