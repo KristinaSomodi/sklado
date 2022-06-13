@@ -25,7 +25,7 @@ const ProductsTable: React.FC<Props> = (props) => {
       <tbody>
         {products.map((product) => {
           return (
-            <tr>
+            <tr key={product.id}>
               <td>{product.barcode}</td>
               <td>{product.name}</td>
               <td>{product.quantity}</td>

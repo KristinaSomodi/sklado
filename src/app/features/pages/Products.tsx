@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import { useEffect, useState } from "react";
 import ProductsService from "../../services/productsService";
 import { NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Products() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -16,6 +17,11 @@ function Products() {
       setProducts(res);
     } catch (error) {
       console.log(error);
+      toast.error(`${error}`, {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
     }
   };
 
