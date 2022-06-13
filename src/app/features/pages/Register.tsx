@@ -1,4 +1,4 @@
-function Login() {
+function Register() {
   return (
     <>
       <div className="l">
@@ -11,7 +11,7 @@ function Login() {
         <div className="l--right">
           {/* title */}
           <div className="title--logo">
-            <div className="title--secondary mt-80 ml-80 mb-42">Login </div>
+            <div className="title--secondary mt-80 ml-80 mb-42">Register </div>
             <img
               src={require("../../../assets/images/logo-xs.png")}
               alt=""
@@ -21,9 +21,18 @@ function Login() {
 
           {/* login form */}
           <form className="loginForm ml-80 mt-32 flex">
-            <div className="title--form">Login</div>
-
             {/* inputs, email password */}
+            <div className="field mt-16">
+              <label htmlFor="fullName" className="field__label ">
+                Full name*
+              </label>
+              <input
+                type="text"
+                placeholder="Full name"
+                className="input input--log mt-8"
+                required
+              />
+            </div>
             <div className="field mt-16">
               <label htmlFor="email" className="field__label ">
                 Email*
@@ -31,6 +40,17 @@ function Login() {
               <input
                 type="text"
                 placeholder="mail@website.com"
+                className="input input--log mt-8"
+                required
+              />
+            </div>
+            <div className="field mt-16">
+              <label htmlFor="username" className="field__label ">
+                Username*
+              </label>
+              <input
+                type="text"
+                placeholder="username1234"
                 className="input input--log mt-8"
                 required
               />
@@ -49,15 +69,29 @@ function Login() {
                 <i className="icon icon--base icon--eye-on icon--black input__icon"></i>
               </div>
             </div>
-            <div className="type type--montserrat type-500 type-16 type--blue flex--right mt-8">
-              Forgot password?
+            <div className="field mt-16">
+              <label htmlFor="password" className="field__label ">
+                Confirm password*
+              </label>
+              <div className="pos--rel">
+                <input
+                  type="password"
+                  placeholder=""
+                  className="input input--log mt-8"
+                  required
+                />
+                <i className="icon icon--base icon--eye-on icon--black input__icon"></i>
+              </div>
             </div>
-            <button className="btn btn--secondary btn--xl mt-80">Login</button>
+
+            <button className="btn btn--secondary btn--xl mt-80">
+              Register
+            </button>
           </form>
           <div className="type type--montserrat ml-80 mt-24">
-            Don't have an account yet?
+            Already have an account?
             <span className="type type--montserrat type-500 type-16 type--blue">
-              Register here.
+              Login here.
             </span>
           </div>
         </div>
@@ -66,4 +100,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;

@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 // import EditQuantity from "./app/features/pages/EditQuantity";
-import Login from "./app/features/pages/Login";
+// import Login from "./app/features/pages/Login";
+import Register from "./app/features/pages/Register";
 // import AddProduct from "./app/features/pages/AddProduct";
 // import Products from "./app/features/pages/Products";
 // import Sidebar from "./app/features/components/Sidebar";
@@ -9,7 +10,7 @@ import Login from "./app/features/pages/Login";
 function MainRouter() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Register />} />
     </Routes>
   );
 }
