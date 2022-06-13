@@ -19,6 +19,23 @@
     padding-left: 16px;
     width: 528px;
   }
+
+  &--log {
+    background-color: #ffffff;
+    font-weight: 300;
+    border: 1px solid #cecece;
+    border-radius: 2px;
+    padding: 12px;
+    padding-left: 16px;
+    width: 528px;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    top: 16px;
+  }
   &:focus {
     outline: none;
   }

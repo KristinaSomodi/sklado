@@ -1,0 +1,30 @@
+/*
+    components: login.scss
+*/
+
+.l {
+  overflow-y: hidden;
+  &--left {
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    left: -50%;
+  }
+  &--right {
+    width: 50%;
+    position: absolute;
+    right: 0px;
+  }
+}
+
+.loginForm {
+  width: 528px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  &--right {
+    align-self: flex-end;
+  }
+}

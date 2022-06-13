@@ -1,0 +1,27 @@
+/*
+    utils: type.scss
+*/
+
+.type {
+  //font-family
+  &--monstserrat {
+    font-family: "Montserrat", sans-serif;
+  }
+  &--nunito {
+    font-family: "Nunito", sans-serif;
+  }
+  //color
+  &--blue {
+    color: $blue;
+  }
+
+  //weight
+  &-500 {
+    font-weight: 500;
+  }
+
+  //size
+  &-16 {
+    font-size: 16px;
+  }
+}
