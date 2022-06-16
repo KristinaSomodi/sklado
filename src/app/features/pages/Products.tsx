@@ -1,15 +1,28 @@
 import { Product } from "../../types/Product";
 import ProductsTable from "../components/ProductsTable";
 import Sidebar from "../components/Sidebar";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsService from "../../services/productsService";
 import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Products() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [productSearch, setProductSearch] = useState<string>("");
 
   const productsService = new ProductsService();
+
+  function search(event: React.ChangeEvent<HTMLInputElement>) {
+    setProductSearch(event.target.value);
+  }
+
+  function handleSearch(value: Product) {
+    if (productSearch === "") {
+      return value;
+    } else if (value.name.includes(productSearch)) {
+      return value;
+    }
+  }
 
   const fetchProducts = async () => {
     try {
@@ -45,7 +58,9 @@ function Products() {
               <input
                 type="text"
                 placeholder="Search"
-                className="input input--search ml-8 "
+                className="input input--search ml-8 
+                "
+                onChange={(event) => search(event)}
               />
             </div>
             <NavLink to={"/add-product"}>
@@ -55,7 +70,10 @@ function Products() {
               </button>
             </NavLink>
           </div>
-          <ProductsTable products={products}></ProductsTable>
+          <ProductsTable
+            products={products}
+            handleSearch={handleSearch}
+          ></ProductsTable>
         </div>
       </div>
     </>

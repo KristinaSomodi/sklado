@@ -4,8 +4,9 @@ interface Props {
   products: Product[];
 }
 
-const ProductsTable: React.FC<Props> = (props) => {
+const ProductsTable: React.FC<Props> = (props, handleSearch) => {
   const { products } = props;
+  const { handle } = handleSearch();
   return (
     <table className="table mt-32">
       <thead>
@@ -23,7 +24,7 @@ const ProductsTable: React.FC<Props> = (props) => {
       </thead>
 
       <tbody>
-        {products.map((product) => {
+        {products.filter(handle).map((product) => {
           return (
             <tr key={product.id}>
               <td>{product.barcode}</td>
