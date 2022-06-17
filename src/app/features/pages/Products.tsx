@@ -6,27 +6,45 @@ import ProductsService from "../../services/productsService";
 import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 
+enum SortOrder {
+  None = "",
+  Asc = "asc",
+  Desc = "desc",
+}
+
 function Products() {
   const [products, setProducts] = useState<Product[]>([]);
   const [productSearch, setProductSearch] = useState<string>("");
+  const [sortBy, setSortBy] = useState<string>("");
+  const [sortOrder, setSortOrder] = useState<SortOrder>(SortOrder.None);
 
   const productsService = new ProductsService();
+
+  function toggleSort(sort: string) {
+    let val = sortOrder;
+    // || SortOrder.Desc
+    //   ? SortOrder.Asc
+    //   : SortOrder.Desc;
+
+    if (val === SortOrder.None) {
+      val = SortOrder.Desc;
+    } else if (val === SortOrder.Desc) {
+      val = SortOrder.Asc;
+    } else if (val === SortOrder.Asc) {
+      val = SortOrder.None;
+    }
+
+    setSortBy(sort);
+    setSortOrder(val);
+  }
 
   function search(event: React.ChangeEvent<HTMLInputElement>) {
     setProductSearch(event.target.value);
   }
 
-  function handleSearch(value: Product) {
-    if (productSearch === "") {
-      return value;
-    } else if (value.name.includes(productSearch)) {
-      return value;
-    }
-  }
-
   const fetchProducts = async () => {
     try {
-      const res = await productsService.getProducts();
+      const res = await productsService.getProducts(sortBy, sortOrder);
       setProducts(res);
     } catch (error) {
       console.log(error);
@@ -40,7 +58,7 @@ function Products() {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [sortBy, sortOrder]);
 
   console.log(products);
 
@@ -70,10 +88,38 @@ function Products() {
               </button>
             </NavLink>
           </div>
-          <ProductsTable
-            products={products}
-            handleSearch={handleSearch}
-          ></ProductsTable>
+
+          <table>
+            <thead>
+              <tr>
+                <th
+                  className="table__header"
+                  onClick={() => toggleSort("barcode")}
+                >
+                  Barcode{" "}
+                  <i className="icon icon--base icon--sort icon--grayd"></i>
+                </th>
+                <th
+                  className="table__header "
+                  onClick={() => toggleSort("name")}
+                >
+                  Name{" "}
+                  <i className="icon icon--base icon--sort icon--grayd"></i>
+                </th>
+                <th
+                  className="table__header"
+                  onClick={() => toggleSort("quantity")}
+                >
+                  Quantity
+                  <i className="icon icon--base icon--sort icon--grayd"></i>
+                </th>
+              </tr>
+            </thead>
+            <ProductsTable
+              products={products}
+              productSearch={productSearch}
+            ></ProductsTable>
+          </table>
         </div>
       </div>
     </>
