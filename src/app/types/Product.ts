@@ -3,4 +3,5 @@ export interface Product {
   name: string;
   barcode: number;
   quantity: number;
+  details?: string;
 }

@@ -19,4 +19,11 @@ export default class ProductsService extends BaseService {
     const res = await this.instance.delete(`products/${id}`);
     return res;
   }
+
+  //post
+
+  async postProduct(productData: Product) {
+    const res = await this.instance.post(`products`, productData);
+    return res;
+  }
 }
