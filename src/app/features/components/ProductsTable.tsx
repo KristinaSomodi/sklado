@@ -1,13 +1,18 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+import ProductsService from "../../services/productsService";
 import { Product } from "../../types/Product";
 
 interface Props {
   products: Product[];
   productSearch: string;
+  fetchProducts: () => void;
 }
 
 const ProductsTable: React.FC<Props> = (props) => {
-  const { products, productSearch } = props;
+  const { products, productSearch, fetchProducts } = props;
+
+  const productsService = new ProductsService();
 
   function handleSearch(value: Product) {
     if (productSearch === "") {
@@ -16,6 +21,24 @@ const ProductsTable: React.FC<Props> = (props) => {
       return value;
     }
   }
+
+  const handleDelete = async (id: string) => {
+    try {
+      await productsService.deleteProduct(id);
+      fetchProducts();
+      toast.success(`Product deleted`, {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
+    } catch (error) {
+      toast.error(`${error}`, {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
+    }
+  };
 
   return (
     <tbody>
@@ -27,7 +50,10 @@ const ProductsTable: React.FC<Props> = (props) => {
             <td>{product.quantity}</td>
             <td className="icons">
               <i className="icon icon--base icon--edit icon--black "></i>
-              <i className="icon icon--base icon--delete icon--black ml-29 "></i>
+              <i
+                className="icon icon--base icon--delete icon--black ml-29 "
+                onClick={() => handleDelete(product.id)}
+              ></i>
             </td>
           </tr>
         );

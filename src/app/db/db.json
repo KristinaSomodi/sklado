@@ -1,22 +1,3 @@
 {
-  "products": [
-    {
-      "id": "ssdjfr3t4assdsd43224th",
-      "name": "product",
-      "barcode": 76543211,
-      "quantity": 15
-    },
-    {
-      "id": "ssdjfr3t4assd111124th",
-      "name": "product2",
-      "barcode": 12134321,
-      "quantity": 23
-    },
-    {
-      "id": "ssdjfr3t4ass000000d24th",
-      "name": "product3",
-      "barcode": 33334321,
-      "quantity": 3
-    }
-  ]
+  "products": []
 }

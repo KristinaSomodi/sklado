@@ -60,8 +60,6 @@ function Products() {
     fetchProducts();
   }, [sortBy, sortOrder]);
 
-  console.log(products);
-
   return (
     <>
       <div className="layout">
@@ -118,6 +116,7 @@ function Products() {
             <ProductsTable
               products={products}
               productSearch={productSearch}
+              fetchProducts={() => fetchProducts()}
             ></ProductsTable>
           </table>
         </div>
