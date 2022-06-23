@@ -13,7 +13,7 @@ function MainRouter() {
       <Route path="/" element={<Landing />} />
       <Route path="/products" element={<Products />} />
       <Route path="/add-product" element={<AddProduct />} />
-      <Route path="/edit-product" element={<EditQuantity />} />
+      <Route path="/edit-product/:productId" element={<EditQuantity />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

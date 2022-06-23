@@ -13,6 +13,11 @@ export default class ProductsService extends BaseService {
     return res.data;
   }
 
+  async getProduct(id: string) {
+    const res = await this.instance.get(`/products/${id}`);
+    return res.data;
+  }
+
   //delete
 
   async deleteProduct(id: string) {
@@ -24,6 +29,12 @@ export default class ProductsService extends BaseService {
 
   async postProduct(productData: Product) {
     const res = await this.instance.post(`products`, productData);
+    return res;
+  }
+
+  //put
+  async editProduct(data: Product, id: string) {
+    const res = await this.instance.put(`products/${id}`, data);
     return res;
   }
 }

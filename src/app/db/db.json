@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "id": "b36b3723-998a-490f-bed9-a3cac67ed3bb",
-      "name": "bole",
-      "barcode": 765432,
-      "quantity": 1,
-      "details": "bezobrazan"
-    },
-    {
       "id": "039fcff9-ad98-4ae3-893c-d4933970d9d5",
       "name": "kutija",
       "barcode": 222226755,
@@ -30,16 +23,16 @@
     },
     {
       "id": "e981185a-056d-490b-b305-c4d9482680c9",
-      "name": "smece",
-      "barcode": 27727272,
-      "quantity": 27,
+      "name": "garbage",
+      "barcode": 20022020,
+      "quantity": 444,
       "details": "asdfghjk"
     },
     {
       "id": "635f4c1c-cabe-4074-9a48-9eaa2dd9e063",
       "name": "karton",
       "barcode": 11111111,
-      "quantity": 30,
+      "quantity": 60,
       "details": ""
     }
   ]

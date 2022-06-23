@@ -113,6 +113,7 @@ function Products() {
                 </th>
               </tr>
             </thead>
+
             <ProductsTable
               products={products}
               productSearch={productSearch}
