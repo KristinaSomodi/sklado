@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import background from "../../../assets/images/background.png";
+import logoXs from "../../../assets/images/logo-xs.png";
 
 function ForgotPassword() {
   return (
@@ -13,11 +14,7 @@ function ForgotPassword() {
             <div className="title--secondary mt-80 ml-80 mb-42">
               Forgot password?{" "}
             </div>
-            <img
-              src={require("../../../assets/images/logo-xs.png")}
-              alt=""
-              className="title--logo-img ml-24"
-            />
+            <img src={logoXs} alt="" className="title--logo-img ml-24" />
           </div>
 
           {/* login form */}

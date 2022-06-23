@@ -1,24 +1,18 @@
 import { NavLink } from "react-router-dom";
+import background from "../../../assets/images/background.png";
+import logoXs from "../../../assets/images/logo-xs.png";
 
 function Register() {
   return (
     <>
       <div className="l">
-        <img
-          src={require("../../../assets/images/background.png")}
-          alt=""
-          className="l--left"
-        />
+        <img src={background} alt="" className="l--left" />
 
         <div className="l--right">
           {/* title */}
           <div className="title--logo">
             <div className="title--secondary mt-80 ml-80 mb-42">Register </div>
-            <img
-              src={require("../../../assets/images/logo-xs.png")}
-              alt=""
-              className="title--logo-img ml-24"
-            />
+            <img src={logoXs} alt="" className="title--logo-img ml-24" />
           </div>
 
           {/* login form */}
