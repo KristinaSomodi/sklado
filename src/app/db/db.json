@@ -18,7 +18,28 @@
       "id": "635f4c1c-cabe-4074-9a48-9eaa2dd9e063",
       "name": "karton",
       "barcode": 11111111,
-      "quantity": 60,
+      "quantity": 70,
+      "details": ""
+    },
+    {
+      "id": "703feb5a-1acb-4618-9a5e-f8df070a3201",
+      "name": "palete",
+      "barcode": 999999,
+      "quantity": 322,
+      "details": ""
+    },
+    {
+      "id": "a13fbe37-f814-4d62-9c69-046711943647",
+      "name": "stol",
+      "barcode": 1276666,
+      "quantity": 77,
+      "details": ""
+    },
+    {
+      "id": "d47988e6-344c-4d7d-a172-bb44bbdfafcd",
+      "name": "kalic",
+      "barcode": 5651111,
+      "quantity": 7721,
       "details": ""
     }
   ]

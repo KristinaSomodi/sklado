@@ -157,6 +157,7 @@ function EditForm() {
           </label>
         </div>
         <button
+          type="button"
           className="btn btn--secondary btn--xl mt-80"
           onClick={() => {
             handleEdit();
@@ -166,6 +167,7 @@ function EditForm() {
           SAVE
         </button>
         <button
+          type="button"
           className="btn btn--delete btn--xl mt-16"
           onClick={() => {
             handleDelete(productId);

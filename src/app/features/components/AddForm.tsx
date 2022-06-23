@@ -108,6 +108,7 @@ function AddForm() {
         </div>
 
         <button
+          type="button"
           className="btn btn--secondary btn--xl mt-80"
           onClick={() => handleProduct()}
         >

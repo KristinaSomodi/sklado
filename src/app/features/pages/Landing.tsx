@@ -12,7 +12,7 @@ function Landing() {
           />
           <div className="title--primary mt-80">Welcome to Sklado!</div>
           <div className="title--tertiary mt-24">Jump right in!</div>
-          <NavLink to={"/login"}>
+          <NavLink to={"/products"}>
             <button className="btn--primary btn--l mt-32">
               LOGIN <i className="icon icon--base icon--arrow ml-29"></i>
             </button>
