@@ -1,5 +1,4 @@
-import { randomUUID } from "crypto";
-import React, { useState } from "react";
+import { useState } from "react";
 import ProductsService from "../../services/productsService";
 import { Product } from "../../types/Product";
 import { v4 as id } from "uuid";
@@ -14,22 +13,6 @@ function AddForm() {
 
   const productsService = new ProductsService();
   const navigate = useNavigate();
-
-  function barcode(event: React.ChangeEvent<HTMLInputElement>) {
-    setProductBarcode(Number(event.target.value));
-  }
-
-  function name(event: React.ChangeEvent<HTMLInputElement>) {
-    setProductName(event.target.value);
-  }
-
-  function details(event: React.ChangeEvent<HTMLInputElement>) {
-    setProductDetails(event.target.value);
-  }
-
-  function quantity(event: React.ChangeEvent<HTMLInputElement>) {
-    setProductQuantity(Number(event.target.value));
-  }
 
   function handleProduct() {
     try {
@@ -66,7 +49,9 @@ function AddForm() {
               type="text"
               placeholder="Barcode"
               className="input input--form mt-8"
-              onChange={(event) => barcode(event)}
+              onChange={(event) =>
+                setProductBarcode(Number(event.target.value))
+              }
               required
             />
           </label>
@@ -78,7 +63,7 @@ function AddForm() {
               type="text"
               placeholder="Name"
               className="input input--form mt-8"
-              onChange={(event) => name(event)}
+              onChange={(event) => setProductName(event.target.value)}
               required
             />
           </label>
@@ -90,7 +75,7 @@ function AddForm() {
               type="text"
               placeholder="Details"
               className="input input--form mt-8"
-              onChange={(event) => details(event)}
+              onChange={(event) => setProductDetails(event.target.value)}
             />
           </label>
         </div>
@@ -101,7 +86,9 @@ function AddForm() {
               type="number"
               placeholder="Quantity"
               className="input input--form mt-8"
-              onChange={(event) => quantity(event)}
+              onChange={(event) =>
+                setProductQuantity(Number(event.target.value))
+              }
               required
             />
           </label>

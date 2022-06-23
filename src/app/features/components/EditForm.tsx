@@ -23,18 +23,6 @@ function EditForm() {
   const params = useParams();
   const navigate = useNavigate();
 
-  function name(event: React.ChangeEvent<HTMLInputElement>) {
-    setProductName(event.target.value);
-  }
-
-  function details(event: React.ChangeEvent<HTMLInputElement>) {
-    setProductDetails(event.target.value);
-  }
-
-  function quantity(event: React.ChangeEvent<HTMLInputElement>) {
-    setProductQuantity(Number(event.target.value));
-  }
-
   const fetchById = async () => {
     try {
       if (params.productId) {
@@ -128,7 +116,7 @@ function EditForm() {
               placeholder="Name"
               value={productName}
               className="input input--form mt-8"
-              onChange={(event) => name(event)}
+              onChange={(event) => setProductName(event.target.value)}
             />
           </label>
         </div>
@@ -140,7 +128,7 @@ function EditForm() {
               placeholder="Details"
               value={productDetails}
               className="input input--form mt-8"
-              onChange={(event) => details(event)}
+              onChange={(event) => setProductDetails(event.target.value)}
             />
           </label>
         </div>
@@ -152,7 +140,9 @@ function EditForm() {
               placeholder="Quantity"
               value={productQuantity}
               className="input input--form mt-8"
-              onChange={(event) => quantity(event)}
+              onChange={(event) =>
+                setProductQuantity(Number(event.target.value))
+              }
             />
           </label>
         </div>
