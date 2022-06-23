@@ -81,6 +81,23 @@ function EditForm() {
     }
   };
 
+  const handleDelete = async (id: string) => {
+    try {
+      await productsService.deleteProduct(id);
+      toast.success(`Product deleted`, {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
+    } catch (error) {
+      toast.error(`${error}`, {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
+    }
+  };
+
   useEffect(() => {
     fetchById();
   }, []);
@@ -148,7 +165,13 @@ function EditForm() {
         >
           SAVE
         </button>
-        <button className="btn btn--delete btn--xl mt-16">
+        <button
+          className="btn btn--delete btn--xl mt-16"
+          onClick={() => {
+            handleDelete(productId);
+            navigate("/products", { replace: true });
+          }}
+        >
           DELETE PRODUCT
         </button>
       </form>

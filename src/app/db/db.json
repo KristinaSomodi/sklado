@@ -15,20 +15,6 @@
       "details": "nema"
     },
     {
-      "id": "3aeb98a2-8cb5-404d-9980-610b22710616",
-      "name": "nema",
-      "barcode": 522000,
-      "quantity": 26,
-      "details": ""
-    },
-    {
-      "id": "e981185a-056d-490b-b305-c4d9482680c9",
-      "name": "garbage",
-      "barcode": 20022020,
-      "quantity": 444,
-      "details": "asdfghjk"
-    },
-    {
       "id": "635f4c1c-cabe-4074-9a48-9eaa2dd9e063",
       "name": "karton",
       "barcode": 11111111,
