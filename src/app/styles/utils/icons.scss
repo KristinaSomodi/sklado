@@ -95,4 +95,38 @@
   &--eye-off {
     mask-image: url("../../../assets/icons/eye-off.svg");
   }
+
+  &--previous {
+    mask-image: url("../../../assets/icons/previous.svg");
+    &:hover {
+      background-color: $blue;
+    }
+  }
+
+  &--one {
+    mask-image: url("../../../assets/icons/one.svg");
+    &:hover {
+      background-color: $blue;
+    }
+  }
+  &--two {
+    mask-image: url("../../../assets/icons/two.svg");
+    &:hover {
+      background-color: $blue;
+    }
+  }
+
+  &--three {
+    mask-image: url("../../../assets/icons/three.svg");
+    &:hover {
+      background-color: $blue;
+    }
+  }
+
+  &--next {
+    mask-image: url("../../../assets/icons/next.svg");
+    &:hover {
+      background-color: $blue;
+    }
+  }
 }

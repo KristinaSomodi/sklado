@@ -6,22 +6,26 @@ export default class ProductsService extends BaseService {
     throw new Error("Method not implemented.");
   }
   //get products
-  async getProducts(sortBy: string, order: string): Promise<Product[]> {
+  async getProducts(
+    sortBy: string,
+    order: string,
+    page: number
+  ): Promise<Product[]> {
     const res = await this.instance.get(
-      `/products?_sort=${sortBy}&_order=${order}`
+      `/products?_sort=${sortBy}&_order=${order}&_page=${page}&_limit=10`
     );
     return res.data;
   }
 
-  async getProduct(id: string) {
-    const res = await this.instance.get(`/products/${id}`);
+  async getProduct(productId: string) {
+    const res = await this.instance.get(`/products/${productId}`);
     return res.data;
   }
 
   //delete
 
-  async deleteProduct(id: string) {
-    const res = await this.instance.delete(`products/${id}`);
+  async deleteProduct(productId: string) {
+    const res = await this.instance.delete(`products/${productId}`);
     return res;
   }
 

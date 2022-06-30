@@ -1,4 +1,4 @@
-import EditForm from "../components/EditForm";
+import Form from "../components/Form";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 
@@ -17,7 +17,7 @@ function EditQuantity() {
             <i className="icon icon--base icon--chevron icon--blue mr-8"></i>
             Back
           </div>
-          <EditForm></EditForm>
+          <Form></Form>
         </div>
       </div>
     </>

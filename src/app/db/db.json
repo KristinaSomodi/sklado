@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "id": "039fcff9-ad98-4ae3-893c-d4933970d9d5",
-      "name": "kutija",
-      "barcode": 222226755,
-      "quantity": 66,
-      "details": "no"
-    },
-    {
       "id": "c18bbfdf-4174-4495-8f71-ecc7f01afe21",
       "name": "papir",
       "barcode": 192837,
@@ -15,31 +8,143 @@
       "details": "nema"
     },
     {
-      "id": "635f4c1c-cabe-4074-9a48-9eaa2dd9e063",
-      "name": "karton",
-      "barcode": 11111111,
+      "id": "703feb5a-1acb-4618-9a5e-f8df070a3201",
+      "name": "palete",
+      "barcode": 999999,
+      "quantity": 396,
+      "details": ""
+    },
+    {
+      "id": "d728ed74-e23a-48e6-8244-8863435362c2",
+      "name": "kutija",
+      "barcode": 9876666,
       "quantity": 70,
       "details": ""
     },
     {
-      "id": "703feb5a-1acb-4618-9a5e-f8df070a3201",
-      "name": "palete",
-      "barcode": 999999,
-      "quantity": 322,
-      "details": ""
-    },
-    {
-      "id": "a13fbe37-f814-4d62-9c69-046711943647",
+      "id": "db025d71-f26d-4eb1-9362-aaf166ba3d39",
       "name": "stol",
-      "barcode": 1276666,
-      "quantity": 77,
+      "barcode": 123456,
+      "quantity": 222,
       "details": ""
     },
     {
-      "id": "d47988e6-344c-4d7d-a172-bb44bbdfafcd",
-      "name": "kalic",
-      "barcode": 5651111,
-      "quantity": 7721,
+      "id": "ecbb495e-263e-42b7-b8ca-fead6ca1a9b2",
+      "name": "stolica",
+      "barcode": 12823,
+      "quantity": 511,
+      "details": ""
+    },
+    {
+      "id": "c064841f-2db7-424a-8783-cfa948fc1e32",
+      "name": "garnitura",
+      "barcode": 222229,
+      "quantity": 55,
+      "details": ""
+    },
+    {
+      "id": "8b3bb427-9462-47e5-a7da-1b4a88db3c70",
+      "name": "ormar",
+      "barcode": 123455,
+      "quantity": 23,
+      "details": ""
+    },
+    {
+      "id": "97a43d2c-a025-47ed-81e9-7c86c0686bb9",
+      "name": "fotelja",
+      "barcode": 333333,
+      "quantity": 32,
+      "details": ""
+    },
+    {
+      "id": "32a49b5b-d248-408b-9252-c9d5566034fe",
+      "name": "prozor",
+      "barcode": 777767,
+      "quantity": 78,
+      "details": ""
+    },
+    {
+      "id": "62d3f631-f46e-46b1-b5c4-f1e1202b81b2",
+      "name": "olovka",
+      "barcode": 322444,
+      "quantity": 2,
+      "details": ""
+    },
+    {
+      "id": "c12e43c5-d2c5-4c5f-834b-864f563f9a4b",
+      "name": "vaza",
+      "barcode": 999333,
+      "quantity": 110,
+      "details": ""
+    },
+    {
+      "id": "058be33f-dea8-487b-8d5a-61785131bbfc",
+      "name": "kalic crni",
+      "barcode": 199000,
+      "quantity": 939,
+      "details": ""
+    },
+    {
+      "id": "dea6e7bd-6df8-4904-ae46-575d4993e515",
+      "name": "vreca",
+      "barcode": 555444,
+      "quantity": 553,
+      "details": ""
+    },
+    {
+      "id": "b4c130fd-1895-474f-8da7-8d6897b4f4da",
+      "name": "kutija XL",
+      "barcode": 111111,
+      "quantity": 111,
+      "details": "velika"
+    },
+    {
+      "id": "790e4337-92e9-4572-b35c-81971aa4b2fa",
+      "name": "zica XS",
+      "barcode": 234432,
+      "quantity": 234,
+      "details": ""
+    },
+    {
+      "id": "41a1f0af-80a8-46b2-97a2-a63cf9764dfb",
+      "name": "ledomat",
+      "barcode": 777222,
+      "quantity": 19,
+      "details": ""
+    },
+    {
+      "id": "ff70ff41-4af4-4bb2-8c3b-dc8f67c66111",
+      "name": "tepih",
+      "barcode": 621622,
+      "quantity": 62,
+      "details": ""
+    },
+    {
+      "id": "c94351f6-1a75-49e9-9cd2-135b20032e5b",
+      "name": "boja",
+      "barcode": 952952,
+      "quantity": 61,
+      "details": ""
+    },
+    {
+      "id": "7b3906ae-ea0a-44fc-b1ee-3c1020f5bd11",
+      "name": "blok",
+      "barcode": 333017,
+      "quantity": 43,
+      "details": "nema"
+    },
+    {
+      "id": "87ce5c6f-32f1-4f53-9e10-aa25817699af",
+      "name": "casa",
+      "barcode": 651888,
+      "quantity": 99,
+      "details": "staklo"
+    },
+    {
+      "id": "b2815462-6451-4c50-a5a7-508c66be4716",
+      "name": "biljeznica",
+      "barcode": 449507,
+      "quantity": 5,
       "details": ""
     }
   ]

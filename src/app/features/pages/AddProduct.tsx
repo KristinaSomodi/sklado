@@ -1,4 +1,4 @@
-import AddForm from "../components/AddForm";
+import Form from "../components/Form";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 
@@ -14,7 +14,7 @@ function AddProduct() {
             <i className="icon icon--base icon--chevron icon--blue mr-8"></i>
             Back
           </div>
-          <AddForm></AddForm>
+          <Form></Form>
         </div>
       </div>
     </>

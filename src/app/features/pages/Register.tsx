@@ -9,15 +9,12 @@ function Register() {
         <img src={background} alt="" className="l--left" />
 
         <div className="l--right">
-          {/* title */}
           <div className="title--logo">
             <div className="title--secondary mt-80 ml-80 mb-42">Register </div>
             <img src={logoXs} alt="" className="title--logo-img ml-24" />
           </div>
 
-          {/* login form */}
           <form className="loginForm ml-80 mt-32 flex">
-            {/* inputs, email password */}
             <div className="field mt-16">
               <label htmlFor="fullName" className="field__label ">
                 Full name*

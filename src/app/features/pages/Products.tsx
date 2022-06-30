@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Product } from "../../types/Product";
 import ProductsTable from "../components/ProductsTable";
 import Sidebar from "../components/Sidebar";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ProductsService from "../../services/productsService";
 import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -17,14 +18,12 @@ function Products() {
   const [productSearch, setProductSearch] = useState<string>("");
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<SortOrder>(SortOrder.None);
+  const [page, setPage] = useState<number>(1);
 
   const productsService = new ProductsService();
 
   function toggleSort(sort: string) {
     let val = sortOrder;
-    // || SortOrder.Desc
-    //   ? SortOrder.Asc
-    //   : SortOrder.Desc;
 
     if (val === SortOrder.None) {
       val = SortOrder.Desc;
@@ -38,16 +37,11 @@ function Products() {
     setSortOrder(val);
   }
 
-  function search(event: React.ChangeEvent<HTMLInputElement>) {
-    setProductSearch(event.target.value);
-  }
-
   const fetchProducts = async () => {
     try {
-      const res = await productsService.getProducts(sortBy, sortOrder);
+      const res = await productsService.getProducts(sortBy, sortOrder, page);
       setProducts(res);
     } catch (error) {
-      console.log(error);
       toast.error(`${error}`, {
         position: "top-center",
         hideProgressBar: true,
@@ -58,7 +52,7 @@ function Products() {
 
   useEffect(() => {
     fetchProducts();
-  }, [sortBy, sortOrder]);
+  }, [sortBy, sortOrder, page]);
 
   return (
     <>
@@ -76,7 +70,7 @@ function Products() {
                 placeholder="Search"
                 className="input input--search ml-8 
                 "
-                onChange={(event) => search(event)}
+                onChange={(event) => setProductSearch(event.target.value)}
               />
             </div>
             <NavLink to={"/add-product"}>
@@ -85,9 +79,14 @@ function Products() {
                 <i className="icon icon--base icon--plus icon--blue ml-40"></i>
               </button>
             </NavLink>
+            <NavLink to={"/login"}>
+              <button className="btn btn--tertiary btn--l  mr-24">
+                Logout
+              </button>
+            </NavLink>
           </div>
 
-          <table>
+          <table className="table">
             <thead>
               <tr>
                 <th
@@ -95,21 +94,39 @@ function Products() {
                   onClick={() => toggleSort("barcode")}
                 >
                   Barcode{" "}
-                  <i className="icon icon--base icon--sort icon--grayd"></i>
+                  <i
+                    className={`icon icon--base icon--sort ${
+                      sortBy === "barcode" && sortOrder !== SortOrder.None
+                        ? "icon--blue"
+                        : "icon--grayd"
+                    }`}
+                  ></i>
                 </th>
                 <th
                   className="table__header "
                   onClick={() => toggleSort("name")}
                 >
                   Name{" "}
-                  <i className="icon icon--base icon--sort icon--grayd"></i>
+                  <i
+                    className={`icon icon--base icon--sort ${
+                      sortBy === "name" && sortOrder !== SortOrder.None
+                        ? "icon--blue"
+                        : "icon--grayd"
+                    }`}
+                  ></i>
                 </th>
                 <th
                   className="table__header"
                   onClick={() => toggleSort("quantity")}
                 >
                   Quantity
-                  <i className="icon icon--base icon--sort icon--grayd"></i>
+                  <i
+                    className={`icon icon--base icon--sort ${
+                      sortBy === "quantity" && sortOrder !== SortOrder.None
+                        ? "icon--blue"
+                        : "icon--grayd"
+                    }`}
+                  ></i>
                 </th>
               </tr>
             </thead>
@@ -120,6 +137,38 @@ function Products() {
               fetchProducts={() => fetchProducts()}
             ></ProductsTable>
           </table>
+          <div className="pages mt-24">
+            <i
+              className="icon icon--base icon--previous icon--black"
+              onClick={() => {
+                page > 1 ? setPage(page - 1) : setPage(page);
+              }}
+            ></i>
+            <i
+              className={`icon icon--base icon--one  ${
+                page === 1 ? "icon--blue" : "icon--black"
+              }`}
+              onClick={() => setPage(1)}
+            ></i>
+            <i
+              className={`icon icon--base icon--two ${
+                page === 2 ? "icon--blue" : "icon--black"
+              }`}
+              onClick={() => setPage(2)}
+            ></i>
+            <i
+              className={`icon icon--base icon--three ${
+                page === 3 ? "icon--blue" : "icon--black"
+              }`}
+              onClick={() => setPage(3)}
+            ></i>
+            <i
+              className="icon icon--base icon--next icon--black"
+              onClick={() => {
+                page < 3 ? setPage(page + 1) : setPage(page);
+              }}
+            ></i>
+          </div>
         </div>
       </div>
     </>

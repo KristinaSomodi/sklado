@@ -1,7 +1,7 @@
 import ProductsService from "../../services/productsService";
 import { Product } from "../../types/Product";
 import { toast } from "react-toastify";
-import EditForm from "./EditForm";
+
 import { NavLink } from "react-router-dom";
 
 interface Props {
@@ -42,26 +42,28 @@ const ProductsTable: React.FC<Props> = (props) => {
   };
 
   return (
-    <tbody>
-      {products.filter(handleSearch).map((product) => {
-        return (
-          <tr key={product.id}>
-            <td>{product.barcode}</td>
-            <td>{product.name}</td>
-            <td>{product.quantity}</td>
-            <td className="icons">
-              <NavLink to={`/edit-product/${product.id}`}>
-                <i className="icon icon--base icon--edit icon--black "></i>
-              </NavLink>
-              <i
-                className="icon icon--base icon--delete icon--black ml-29 "
-                onClick={() => handleDelete(product.id)}
-              ></i>
-            </td>
-          </tr>
-        );
-      })}
-    </tbody>
+    <>
+      <tbody>
+        {products.filter(handleSearch).map((product) => {
+          return (
+            <tr key={product.id}>
+              <td>{product.barcode}</td>
+              <td>{product.name}</td>
+              <td>{product.quantity}</td>
+              <td className="icons">
+                <NavLink to={`/edit-product/${product.id}`}>
+                  <i className="icon icon--base icon--edit icon--black "></i>
+                </NavLink>
+                <i
+                  className="icon icon--base icon--delete icon--black ml-29 "
+                  onClick={() => handleDelete(product.id)}
+                ></i>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </>
   );
 };
 
